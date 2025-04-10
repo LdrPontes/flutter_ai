@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../use_cases/face_recognition/face_recognition_screen.dart';
 import '../use_cases/object_detection/object_detection_screen.dart';
+import '../use_cases/person_detection/person_detection_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -38,6 +39,18 @@ class HomeScreen extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const BirdDetectionScreen(),
+                ),
+              ),
+            ),
+            _buildUseCaseCard(
+              context,
+              'Person Detection',
+              'Detect people in uploaded videos using offline AI',
+              Icons.person,
+              () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const PersonDetectionScreen(),
                 ),
               ),
             ),
